@@ -43,11 +43,12 @@ export class LocalStorageService implements OnDestroy {
     }
 }
 
-import {Type} from "@angular/core";
+// import {Type} from "@angular/core/src/facade/lang";
+// import {provide} from "@angular/core/src/di";
 import {ComponentRef} from "@angular/core";
 
 export function LocalStorageSubscriber(appPromise: Promise<ComponentRef<any>>) {
     appPromise.then((bla) => {
-        bla.injector.get(<Type<any>>LocalStorageService);
+        bla.injector.get(LocalStorageService);
     });
 }
